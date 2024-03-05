@@ -1,6 +1,6 @@
 ::: note
 the code is [here on my Github account:
-`github.com/joshlong/bootiful-spring-boot-3`](https://github.com/joshlong/bootiful-spring-boot-3/tree/main/service).
+`github.com/joshlong/bootiful-spring-boot-2024-blog`](https://github.com/joshlong-attic/bootiful-spring-boot-2024-blog/tree/main/service).
 :::
 
 Hi, Spring fans! I'm [Josh Long](https://spring.io/team/joshlong), and I
