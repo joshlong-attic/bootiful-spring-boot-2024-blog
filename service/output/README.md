@@ -488,7 +488,8 @@ produce a response, so get that cup of coffee, glass of water, or
 whatever, ready for a quick but satisfying sip.
 
 <figure>
-<img src="images/story-time-ai-response.png"
+<img
+src="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/story-time-ai-response.png"
 alt="story time ai response" />
 <figcaption>the JSON response in my browser, with a JSON formatter
 plugin enabled</figcaption>
@@ -727,7 +728,7 @@ Then we have Rust and its zero-cost abstractions. Well done.
 
 Then we have C++...​
 
-![gross](images/gross.gif)
+![gross](https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/gross.gif)
 
 C++ is disgusting! Moving on...​
 
@@ -761,7 +762,8 @@ president when I first learned Python! But these numbers are *not*
 great. Think about it. 75.88. Let's round up to 76. I'm not great at
 math. But you know what is? Freakin\' Python! Let's ask it.
 
-![python doing math](images/python-doing-math.png)
+![python doing
+math](https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/python-doing-math.png)
 
 38! That means that if you ran a program in Java, and the generation of
 the energy required to run it creates a bit of carbon that ends up
@@ -878,7 +880,9 @@ from the soundtrack to the Nintendo 64 video game to the first Pierce
 Brosnan outing as James Bond, *Goldeneye*. I like it.
 
 <figure>
-<img src="images/adinn-elevator-music.png" alt="adinn elevator music" />
+<img
+src="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/adinn-elevator-music.png"
+alt="adinn elevator music" />
 <figcaption><em>Goldeneye</em> had some amazing elevator
 music!</figcaption>
 </figure>
@@ -888,7 +892,9 @@ Couldn't agree more. My stupid microwave will make a *ding!* sound when
 it's done. Why couldn't my multi-million line compiler?
 
 <figure>
-<img src="images/ivan-beeps.png" alt="ivan beeps" />
+<img
+src="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/ivan-beeps.png"
+alt="ivan beeps" />
 <figcaption><em>DING!</em></figcaption>
 </figure>
 
@@ -898,11 +904,13 @@ team. He said that adding elevator music would only just fix the
 symptoms, and not the cause of the problem, which is making GraalVM even
 more efficient in terms of time and memory.
 
-![doctor niephaus](images/doctor-niephaus.png)
+![doctor
+niephaus](https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/doctor-niephaus.png)
 
 Ok. But he did share this promising prototype!
 
-![graalvm prototype](images/graalvm-prototype.png)
+![graalvm
+prototype](https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/graalvm-prototype.png)
 
 I'm sure it'll get merged any day now...​
 
@@ -929,21 +937,29 @@ GRADLE=$SERVICE/build/native/nativeCompile/service
 ls -la $GRADLE && $GRADLE || $MVN
 ```
 
-On my machine, it starts up in \~100 milliseconds! Like a rocket! But I
-don't really care all that much about that because this is a standalone,
-long-lived service. What I care about is the [Resident Set Size
+On my machine, it starts up in \~100 milliseconds! Like a rocket! And,
+obviously, it would be much faster still if I were using something like
+Spring Cloud Function to build AWS Lamba-style functions-as-a-service,
+because I wouldn't need for example to package an HTTP server. Indeed,
+if pure startup speed were *all* that I really wanted, then I might even
+use Spring's amazing support for [Project
+CRaC](https://www.youtube.com/watch?v=dMhpDdR6nHw&t=2658s). That's
+neither here no there. I don't really care all that much about that
+because this is a standalone, long-lived service. What I care about is
+the resource usage, as represented by the [Resident Set Size
 (RSS)](https://en.wikipedia.org/wiki/RSS). Note the process identifier
-(PID) - it'll be in the logs. If the PID is 55, then get the RSS like
-this using the `ps` utility, available on virtually all Unixes:
+(PID) - it'll be in the logs. If the PID is, let's say, `55`, then get
+the RSS like this using the `ps` utility, available on virtually all
+Unixes:
 
 ``` shell
 ps -o rss 55
 ```
 
-It'll dump out a number in kilobytes, so divide by a thousand, and
-you'll get the number in megabytes. On my machine, it takes just over
-100MB to run. You can't run Slack in that tiny amount of RAM. I bet
-you've got individual browser tabs in Chrome taking that much.
+It'll dump out a number in kilobytes; divide by a thousand and you'll
+get the number in megabytes. On my machine, it takes just over 100MB to
+run. You can't run Slack in that tiny amount of memory! I bet you've got
+individual browser tabs in Chrome taking that much, or more!
 
 So, we have a program that is as concise as can be while being easy to
 develop and iterate on. And it uses virtual threads to give us

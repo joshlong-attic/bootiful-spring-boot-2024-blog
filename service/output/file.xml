@@ -4,7 +4,7 @@
 <article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>Bootiful Spring Boot in 2024</title>
-<date>2024-02-29</date>
+<date>2024-03-05</date>
 </info>
 <note>
 <simpara>the code is <link xl:href="https://github.com/joshlong/bootiful-spring-boot-3/tree/main/service">here on my Github account: <literal>github.com/joshlong/bootiful-spring-boot-3</literal></link>.</simpara>
@@ -213,7 +213,7 @@ class StoryController {
 <title>the JSON response in my browser, with a JSON formatter plugin enabled</title>
 <mediaobject>
 <imageobject>
-<imagedata fileref="images/story-time-ai-response.png"/>
+<imagedata fileref="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/story-time-ai-response.png"/>
 </imageobject>
 <textobject><phrase>story time ai response</phrase></textobject>
 </mediaobject>
@@ -307,7 +307,7 @@ class Threads {
 <informalfigure>
 <mediaobject>
 <imageobject>
-<imagedata fileref="images/gross.gif"/>
+<imagedata fileref="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/gross.gif"/>
 </imageobject>
 <textobject><phrase>gross</phrase></textobject>
 </mediaobject>
@@ -323,7 +323,7 @@ class Threads {
 <informalfigure>
 <mediaobject>
 <imageobject>
-<imagedata fileref="images/python-doing-math.png"/>
+<imagedata fileref="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/python-doing-math.png"/>
 </imageobject>
 <textobject><phrase>python doing math</phrase></textobject>
 </mediaobject>
@@ -346,7 +346,7 @@ class Threads {
 <title><emphasis>Goldeneye</emphasis> had some amazing elevator music!</title>
 <mediaobject>
 <imageobject>
-<imagedata fileref="images/adinn-elevator-music.png"/>
+<imagedata fileref="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/adinn-elevator-music.png"/>
 </imageobject>
 <textobject><phrase>adinn elevator music</phrase></textobject>
 </mediaobject>
@@ -356,7 +356,7 @@ class Threads {
 <title><emphasis>DING!</emphasis></title>
 <mediaobject>
 <imageobject>
-<imagedata fileref="images/ivan-beeps.png"/>
+<imagedata fileref="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/ivan-beeps.png"/>
 </imageobject>
 <textobject><phrase>ivan beeps</phrase></textobject>
 </mediaobject>
@@ -365,7 +365,7 @@ class Threads {
 <informalfigure>
 <mediaobject>
 <imageobject>
-<imagedata fileref="images/doctor-niephaus.png"/>
+<imagedata fileref="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/doctor-niephaus.png"/>
 </imageobject>
 <textobject><phrase>doctor niephaus</phrase></textobject>
 </mediaobject>
@@ -374,7 +374,7 @@ class Threads {
 <informalfigure>
 <mediaobject>
 <imageobject>
-<imagedata fileref="images/graalvm-prototype.png"/>
+<imagedata fileref="https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/graalvm-prototype.png"/>
 </imageobject>
 <textobject><phrase>graalvm prototype</phrase></textobject>
 </mediaobject>
@@ -392,9 +392,9 @@ SERVICE=.
 MVN=$SERVICE/target/service
 GRADLE=$SERVICE/build/native/nativeCompile/service
 ls -la $GRADLE &amp;&amp; $GRADLE || $MVN</programlisting>
-<simpara>On my machine, it starts up in ~100 milliseconds! Like a rocket! But I don&#8217;t really care all that much about that because this is a standalone, long-lived service. What I care about is the <link xl:href="https://en.wikipedia.org/wiki/RSS">Resident Set Size (RSS)</link>. Note the process identifier (PID) - it&#8217;ll be in the logs. If the PID is 55, then get the RSS like this using the <literal>ps</literal> utility, available on virtually all Unixes:</simpara>
+<simpara>On my machine, it starts up in ~100 milliseconds! Like a rocket! And, obviously, it would be much faster still if I were using something like Spring Cloud Function to build AWS Lamba-style functions-as-a-service, because I wouldn&#8217;t need for example to package an HTTP server. Indeed, if pure startup speed were <emphasis>all</emphasis> that I really wanted, then I might even use Spring&#8217;s amazing support for <link xl:href="https://www.youtube.com/watch?v=dMhpDdR6nHw&amp;t=2658s">Project CRaC</link>. That&#8217;s neither here no there. I don&#8217;t really care all that much about that because this is a standalone, long-lived service. What I care about is the resource usage, as represented by the <link xl:href="https://en.wikipedia.org/wiki/RSS">Resident Set Size (RSS)</link>. Note the process identifier (PID) - it&#8217;ll be in the logs. If the PID is, let&#8217;s say, <literal>55</literal>, then get the RSS like this using the <literal>ps</literal> utility, available on virtually all Unixes:</simpara>
 <programlisting language="shell" linenumbering="unnumbered">ps -o rss 55</programlisting>
-<simpara>It&#8217;ll dump out a number in kilobytes, so divide by a thousand, and you&#8217;ll get the number in megabytes. On my machine, it takes just over 100MB to run. You can&#8217;t run Slack in that tiny amount of RAM. I bet you&#8217;ve got individual browser tabs in Chrome taking that much.</simpara>
+<simpara>It&#8217;ll dump out a number in kilobytes;  divide by a thousand and you&#8217;ll get the number in megabytes. On my machine, it takes just over 100MB to run. You can&#8217;t run Slack in that tiny amount of memory! I bet you&#8217;ve got individual browser tabs in Chrome taking that much, or more!</simpara>
 <simpara>So, we have a program that is as concise as can be while being easy to develop and iterate on. And it uses virtual threads to give us unparalleled scalability. It runs as a standalone, self-contained, operating system and architecture-specific native image. Oh! And, it supports the freaking singularity!</simpara>
 <simpara>We live in an amazing time. There&#8217;s never been a better time to be a Java and Spring developer. I hope I&#8217;ve so persuaded you, too.</simpara>
 <simpara>If you enjoyed this blog, I hope you&#8217;ll subscribe to our <link xl:href="https://youtube.com/@springsourcedev">YouTube channel</link>, where I have new videos every week on the <link xl:href="https://bit.ly/spring-tips-playlist"><emphasis>Spring Tips</emphasis></link>. And, of course, you can find my <link xl:href="https://biodrop.io/joshlong">Twitter/X, website, YouTube channel, books, Podcast, and much more here on Biodrop</link>. Thank you!</simpara>
