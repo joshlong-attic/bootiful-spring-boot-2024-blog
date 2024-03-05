@@ -972,7 +972,7 @@ Java and Spring developer. I hope I've so persuaded you, too.
 
 If you enjoyed this blog, I hope you'll subscribe to our [YouTube
 channel](https://youtube.com/@springsourcedev), where I have new videos
-every week on the [*Spring Tips*](https://bit.ly/spring-tips-playlist).
-And, of course, you can find my [Twitter/X, website, YouTube channel,
-books, Podcast, and much more here on
+every week in the [*Spring Tips*](https://bit.ly/spring-tips-playlist)
+playlist. And, of course, you can find my [Twitter/X, website, YouTube
+channel, books, Podcast, and much more here on
 Biodrop](https://biodrop.io/joshlong). Thank you!

@@ -410,4 +410,4 @@ So, we have a program that is as concise as can be while being easy to develop a
 
 We live in an amazing time. There's never been a better time to be a Java and Spring developer. I hope I've so persuaded you, too.
 
-If you enjoyed this blog, I hope you'll subscribe to our https://youtube.com/@springsourcedev[YouTube channel], where I have new videos every week on the https://bit.ly/spring-tips-playlist[_Spring Tips_]. And, of course, you can find my https://biodrop.io/joshlong[Twitter/X, website, YouTube channel, books, Podcast, and much more here on Biodrop]. Thank you!
+If you enjoyed this blog, I hope you'll subscribe to our https://youtube.com/@springsourcedev[YouTube channel], where I have new videos every week in the https://bit.ly/spring-tips-playlist[_Spring Tips_] playlist. And, of course, you can find my https://biodrop.io/joshlong[Twitter/X, website, YouTube channel, books, Podcast, and much more here on Biodrop]. Thank you!
